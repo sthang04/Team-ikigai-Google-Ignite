@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 
+/* When you'll start changing states
+class HomePage extends StatefulWidget{
+  const HomePage({super.key});
+  @override
+  State<HomePage> createState()=>_HomePageState();
+}
+*/
+
 class HomePage extends StatelessWidget{
   const HomePage({super.key});
 

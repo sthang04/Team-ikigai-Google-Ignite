@@ -8,7 +8,7 @@ class ItineraryPage extends StatelessWidget{
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFA5D6A7),
-        //centerTitle: false
+        centerTitle: true,
         title: Text('Make your itinerary'),
       ),
       body: SingleChildScrollView(

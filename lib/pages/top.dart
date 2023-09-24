@@ -20,6 +20,7 @@ class _TopPageState extends State<TopPage>{
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: Color(0xFFA5D6A7),
+        //comment out if you think styling looks better with icon name included underneath
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: [
@@ -31,7 +32,7 @@ class _TopPageState extends State<TopPage>{
         currentIndex: currentIndex,
         onTap:(index){
           setState((){
-            currentIndex= index;
+            currentIndex=index;
           });
         },
       ),
