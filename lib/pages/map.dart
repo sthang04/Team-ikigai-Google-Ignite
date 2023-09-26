@@ -25,3 +25,23 @@ class MapPage extends StatelessWidget{
     );
   }
 }
+
+// const ListTile(
+//   leading: Icon(Icons.album),
+//   title: Text('Lau Pa Sat'),
+//   subtitle: Column(
+//     crossAxisAlignment: CrossAxisAlignment.start,
+//     children: [
+//       Text('18 Raffles Quay, Singapore 048582'),
+//       Row(
+//         children: [
+//           Icon(Icons.star, color: Colors.yellow),
+//           Icon(Icons.star, color: Colors.yellow),
+//           Icon(Icons.star, color: Colors.yellow),
+//           Icon(Icons.star_half, color: Colors.yellow),
+//           Icon(Icons.star_border, color: Colors.yellow),
+//         ],
+//       ),
+//     ],
+//   ),
+// ),

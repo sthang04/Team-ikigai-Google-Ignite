@@ -1,32 +1,11 @@
 import 'package:flutter/material.dart';
-
-/* When you'll start changing states
-class HomePage extends StatefulWidget{
-  const HomePage({super.key});
-  @override
-  State<HomePage> createState()=>_HomePageState();
-}
-*/
 import 'favourites.dart';
 import 'map.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+void main() => runApp(const HawkersPage());
 
-  // @override
-  // Widget build(BuildContext context){
-  //   return Scaffold(
-  //     appBar: AppBar(
-  //       backgroundColor: Color(0xFFA5D6A7),
-  //       //centerTitle: false
-  //       title: Text('BeLocal'),
-  //     ),
-  //     body: SingleChildScrollView(
-
-  //     ),
-  //   );
-  // }
-
+class HawkersPage extends StatelessWidget {
+  const HawkersPage({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
