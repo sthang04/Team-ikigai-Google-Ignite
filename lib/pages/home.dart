@@ -1,5 +1,16 @@
 import 'package:flutter/material.dart';
 import 'itinerary.dart';
+import 'article_1.dart';
+import 'article_2.dart';
+import 'article_3.dart';
+import 'article_4.dart';
+
+final pagesRoutes = {
+  'article_1': HawkersPage(),
+  'article_2': DrinksPage(),
+  'article_3': SnacksPage(),
+  'article_4': FoodPage(),
+};
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -66,7 +77,12 @@ class HomePage extends StatelessWidget {
                   );
                 },
                 child: Text('START YOUR ITINERARY'),
-                style: ElevatedButton.styleFrom(primary: Colors.red),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.red,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
               ),
             ),
             SizedBox(height: 20),
@@ -82,16 +98,24 @@ class HomePage extends StatelessWidget {
                 childAspectRatio: 1.0, // Makes it square
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
-                children: [
-                  for (var pages in subpage)
-                    ClipRRect(
+                children: subpage.map((page) {
+                  return InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                pagesRoutes[page] ?? DefaultPage()),
+                      );
+                    },
+                    child: ClipRRect(
                       borderRadius: BorderRadius.circular(10.0),
-                      child:
-                          Image.asset('assets/$pages.png', fit: BoxFit.cover),
-                    )
-                ],
+                      child: Image.asset('assets/$page.png', fit: BoxFit.cover),
+                    ),
+                  );
+                }).toList(),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -99,4 +123,16 @@ class HomePage extends StatelessWidget {
   }
 }
 
-final subpage = ['hawkers', 'drinks', 'nostalgia', 'walletFriendly'];
+final subpage = ['article_1', 'article_2', 'article_3', 'article_4'];
+
+class DefaultPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Default Page"),
+      ),
+      body: Center(child: Text("This is a default page!")),
+    );
+  }
+}
