@@ -6,16 +6,21 @@ void main() => runApp(const HawkersPage());
 
 class HawkersPage extends StatelessWidget {
   const HawkersPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
               backgroundColor: Color(0xFFA5D6A7),
-              title: Text(
-                  'Top 10 Hawkers'), // Replace with your desired app bar title
+              title: Text('Top 10 Hawkers'),
+              leading: IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () => Navigator.pop(context),
+              ),
             ),
             body: Center(
+                // Start the body property here
                 child: SingleChildScrollView(
               child: Card(
                 child: Column(
