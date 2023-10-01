@@ -35,8 +35,12 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
+<<<<<<< HEAD
   table_calendar: ^3.0.9
   intl: ^0.18.1
+=======
+  provider: ^6.0.3
+>>>>>>> 8a487fd043321ac4e18c88feaf4e594e51275b0a
 
 dev_dependencies:
   flutter_test:
@@ -64,6 +68,48 @@ flutter:
     - assets/article_2.png
     - assets/article_3.png
     - assets/article_4.png
+    - assets/lau_pa_sat.png
+    - assets/adam_road.png
+    - assets/amoy_street.png
+    - assets/chinatown_complex.png
+    - assets/ghim_moh.png
+    - assets/maxwell.png
+    - assets/old_airport_road.png
+    - assets/newton.png
+    - assets/tekka.png
+    - assets/tiong_bahru.png
+    - assets/bandung.png
+    - assets/bubbletea.png
+    - assets/cider.png
+    - assets/chinchow.png
+    - assets/kopi.png
+    - assets/penicillin.png
+    - assets/sgsling.png
+    - assets/sugarcane.png
+    - assets/tehtarik.png
+    - assets/tigerbeer.png
+    - assets/kingofsnacks.png
+    - assets/seah.png
+    - assets/cookiestalk.png
+    - assets/thebiscuitshop.png
+    - assets/teckleong.png
+    - assets/biscuitking.png
+    - assets/goodolddays.png
+    - assets/biscuitparadise.png
+    - assets/nelly.png
+    - assets/snacksfirst.png
+    - assets/chillicrab.png
+    - assets/chickenrice.png
+    - assets/charkwayteow.png
+    - assets/nasilemak.png
+    - assets/kayatoast.png
+    - assets/satay.png
+    - assets/bakkutteh.png
+    - assets/sambalstingray.png
+    - assets/laksa.png
+    - assets/bcm.png
+    
+
 
   # To add assets to your application, add an assets section, like this:
   # assets:

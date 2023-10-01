@@ -4,8 +4,37 @@ import 'map.dart';
 
 void main() => runApp(const SnacksPage());
 
-class SnacksPage extends StatelessWidget {
+class FoodItem {
+  final String name;
+  final String address;
+  final double rating;
+
+  FoodItem({required this.name, required this.address, required this.rating});
+}
+
+class SnacksPage extends StatefulWidget {
   const SnacksPage({super.key});
+
+  @override
+  _SnacksPageState createState() => _SnacksPageState();
+}
+
+class _SnacksPageState extends State<SnacksPage> {
+  List<FoodItem> favoritedItems = [];
+
+  void addToFavorites(FoodItem foodItem) {
+    setState(() {
+      favoritedItems.add(foodItem);
+    });
+  }
+  void removeFromFavorites(int index) {
+    setState(() {
+      favoritedItems.removeAt(index);
+    });
+  }
+
+// class SnacksPage extends StatelessWidget {
+//   const SnacksPage({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,8 +54,12 @@ class SnacksPage extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/kingofsnacks.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('King of Snacks'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -67,16 +100,28 @@ class SnacksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                             addToFavorites(FoodItem(
+                              name: 'King of Snacks',
+                              address: '1 Fusionopolis Way, #B2-04 Connexis, Singapore 138632',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/seah.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text("Seah's Biscuit Shop"),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -116,16 +161,28 @@ class SnacksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: "Seah's Biscuit Shop",
+                              address: 'Block 716 Ang Mo Kio Ave 6, #01-4024, S560716',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/cookiestalk.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('CookiesTalk'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -166,16 +223,28 @@ class SnacksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'CookiesTalk',
+                              address: 'Block 625 Ang Mo Kio Avenue 9, #01-116, Singapore 560625',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/thebiscuitshop.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('The Biscuit Shop'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -216,16 +285,28 @@ class SnacksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'The Biscuit Shop',
+                              address: 'Tanjong Pagar Plz, #01-08/09 Block 6, Singapore 081006',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/teckleong.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('Teck Leong Lee Kee'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -266,16 +347,28 @@ class SnacksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'Teck Leong Lee Kee',
+                              address: 'Blk 5029 Ang Mo Kio Industrial Park 2, #01-141, 569532',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/biscuitking.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('Biscuit King'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -315,16 +408,28 @@ class SnacksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'Biscuit King',
+                              address: '130 Casuarina Road, Singapore 579518',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/goodolddays.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('Good Old Days'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -365,16 +470,28 @@ class SnacksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'Good Old Days',
+                              address: 'Block 103 Yishun Ring Road (Chong Pang), #01-95, Singapore 760103',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/biscuitparadise.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('The Biscuit Paradise'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -415,16 +532,28 @@ class SnacksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'The Biscuit Paradise',
+                              address: 'Kovan 209 Market and Food Centre, 209 Hougang St 21, Singapore 530209',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/nelly.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text("Nelly's Retro Snacks"),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -464,16 +593,28 @@ class SnacksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: "Nelly's Retro Snacks",
+                              address: 'Punggol Plaza',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/snacksfirst.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('SnackFirst'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -514,9 +655,17 @@ class SnacksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'SnackFirst',
+                              address: '18 Boon Lay Way #02-120, Tradehub 21 West Lobby Singapore 609966',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),

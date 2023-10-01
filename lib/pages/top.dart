@@ -1,4 +1,3 @@
-import 'package:belocal_app/pages/article_1.dart';
 import 'package:belocal_app/pages/favourites.dart';
 import 'package:belocal_app/pages/home.dart';
 import 'package:belocal_app/pages/itinerary.dart';
@@ -43,7 +42,7 @@ class _TopPageState extends State<TopPage>{
     HomePage(),
     ItineraryPage(),
     MapPage(),
-    FavouritesPage(),
+    FavouritesPage(favoritedItems: [], onDeleteItem: (index) {}),
   ];
 }
 
