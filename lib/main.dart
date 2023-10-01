@@ -1,28 +1,17 @@
 import 'package:belocal_app/pages/top.dart';
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:intl/date_symbol_data_local.dart';
-
-void main() async{
-  await initializeDateFormatting();
-  runApp(const MyApp());
-=======
 import 'package:provider/provider.dart';
 import 'pages/allfavourites.dart';
 
-
-// void main() {
-//   runApp(const MyApp());
-// }
-
-void main() {
+void main() async{
+  await initializeDateFormatting();
   runApp(
     ChangeNotifierProvider(
       create: (context) => FavoritedItemsProvider(),
       child: const MyApp(),
     ),
   );
->>>>>>> 8a487fd043321ac4e18c88feaf4e594e51275b0a
 }
 
 
