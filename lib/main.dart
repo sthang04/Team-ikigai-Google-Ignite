@@ -1,9 +1,22 @@
 import 'package:belocal_app/pages/top.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'pages/allfavourites.dart';
+
+
+// void main() {
+//   runApp(const MyApp());
+// }
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => FavoritedItemsProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});

@@ -4,8 +4,38 @@ import 'map.dart';
 
 void main() => runApp(const DrinksPage());
 
-class DrinksPage extends StatelessWidget {
+class FoodItem {
+  final String name;
+  final String address;
+  final double rating;
+
+  FoodItem({required this.name, required this.address, required this.rating});
+}
+
+class DrinksPage extends StatefulWidget {
   const DrinksPage({super.key});
+
+  @override
+  _DrinksPageState createState() => _DrinksPageState();
+}
+
+class _DrinksPageState extends State<DrinksPage> {
+  List<FoodItem> favoritedItems = [];
+
+  void addToFavorites(FoodItem foodItem) {
+    setState(() {
+      favoritedItems.add(foodItem);
+    });
+  }
+
+  void removeFromFavorites(int index) {
+    setState(() {
+      favoritedItems.removeAt(index);
+    });
+  }
+
+// class DrinksPage extends StatelessWidget {
+//   const DrinksPage({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -25,8 +55,12 @@ class DrinksPage extends StatelessWidget {
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/kopi.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('Kopi-O'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -66,16 +100,28 @@ class DrinksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'Kopi-O',
+                              address: 'O’Coffee Club, Singapore',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/tehtarik.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('Teh Tarik'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,16 +161,28 @@ class DrinksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'Teh Tarik',
+                              address: 'Mr. Teh Tarik, Bedok, Singapore',
+                              rating: 4.5,
+                            )); 
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/bandung.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('Bandung'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -151,9 +209,17 @@ class DrinksPage extends StatelessWidget {
                             // Handle map icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => MapPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'Bandung',
+                              address: 'Power Rojak Bandung, Singapore',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
@@ -164,7 +230,10 @@ class DrinksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
                           },
@@ -172,8 +241,12 @@ class DrinksPage extends StatelessWidget {
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/tigerbeer.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('Tiger Beer'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -213,16 +286,28 @@ class DrinksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'Tiger Beer',
+                              address: 'Tiger Brewery Tour, Singapore',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/sugarcane.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('Sugarcane Juice'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -262,16 +347,28 @@ class DrinksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'Sugarcane Juice',
+                              address: 'Victory Sugarcane Juice, Singapore',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/chinchow.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('Chin Chow Drink'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -311,16 +408,28 @@ class DrinksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'Chin Chow Drink',
+                              address: 'Shun Xing Coffee Stall, Singapore',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/sgsling.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('Singapore Sling'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -360,16 +469,28 @@ class DrinksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'Singapore Sling',
+                              address: 'Long Bar, Raffel Hotel, Singapore',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/penicillin.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('Penicillin Cocktail'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -409,16 +530,28 @@ class DrinksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'Penicillin Cocktail',
+                              address: 'Skinny’s Lounge, Singapore',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/cider.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('Cider'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -458,16 +591,28 @@ class DrinksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'Cider',
+                              address: 'Adstragold, Katong, Singapore',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
                       ],
                     ),
-                    const ListTile(
-                      leading: Icon(Icons.album),
+                    ListTile(
+                      leading: Image.asset(
+                        'assets/bubbletea.png', // Replace with the path to your image asset
+                        width: 100, // Adjust the width as needed
+                        height: 100, // Adjust the height as needed
+                      ),
                       title: Text('Bubble Tea'),
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -507,9 +652,17 @@ class DrinksPage extends StatelessWidget {
                             // Handle favorite icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(),
+                                builder: (context) => FavouritesPage(
+                                  favoritedItems: favoritedItems,
+                                  onDeleteItem: removeFromFavorites,
+                                ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'Bubble Tea',
+                              address: 'Woobbee, Singapore',
+                              rating: 4.5,
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
