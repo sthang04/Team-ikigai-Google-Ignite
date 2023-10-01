@@ -20,7 +20,7 @@ class _ItineraryPageState extends State<ItineraryPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFA5D6A7),
-        title: Text('Make your itinerary'),
+        title: Text('Make your itinerary', style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       body: Center(
         child: Column(

@@ -57,7 +57,7 @@ class _DrinksPageState extends State<DrinksPage> {
                   children: <Widget>[
                     ListTile(
                       leading: Image.asset(
-                        'assets/kopi.png', // Replace with the path to your image asset
+                        '../../assets/kopi.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -118,7 +118,7 @@ class _DrinksPageState extends State<DrinksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/tehtarik.png', // Replace with the path to your image asset
+                        '../../assets/tehtarik.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -179,7 +179,7 @@ class _DrinksPageState extends State<DrinksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/bandung.png', // Replace with the path to your image asset
+                        '../../assets/bandung.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -243,7 +243,7 @@ class _DrinksPageState extends State<DrinksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/tigerbeer.png', // Replace with the path to your image asset
+                        '../../assets/tigerbeer.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -304,7 +304,7 @@ class _DrinksPageState extends State<DrinksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/sugarcane.png', // Replace with the path to your image asset
+                        '../../assets/sugarcane.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -365,7 +365,7 @@ class _DrinksPageState extends State<DrinksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/chinchow.png', // Replace with the path to your image asset
+                        '../../assets/chinchow.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -426,7 +426,7 @@ class _DrinksPageState extends State<DrinksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/sgsling.png', // Replace with the path to your image asset
+                        '../../assets/sgsling.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -487,7 +487,7 @@ class _DrinksPageState extends State<DrinksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/penicillin.png', // Replace with the path to your image asset
+                        '../../assets/penicillin.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -548,7 +548,7 @@ class _DrinksPageState extends State<DrinksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/cider.png', // Replace with the path to your image asset
+                        '../../assets/cider.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -609,7 +609,7 @@ class _DrinksPageState extends State<DrinksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/bubbletea.png', // Replace with the path to your image asset
+                        '../../assets/bubbletea.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),

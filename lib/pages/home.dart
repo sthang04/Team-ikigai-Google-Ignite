@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFA5D6A7),
-        title: Text('BeLocal'),
+        title: Text('BeLocal', style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -78,7 +78,7 @@ class HomePage extends StatelessWidget {
                 },
                 child: Text('START YOUR ITINERARY'),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.red,
+                  primary: Colors.amberAccent,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),

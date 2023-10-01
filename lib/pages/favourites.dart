@@ -51,7 +51,7 @@ class _FavouritesPageState extends State<FavouritesPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFA5D6A7),
-        title: Text('Favorites'),
+        title: Text('Favorites', style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       body: ListView.builder(
         itemCount: widget.favoritedItems.length,

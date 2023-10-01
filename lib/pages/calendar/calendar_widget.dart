@@ -122,7 +122,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
             });
         },
         child: Icon(Icons.add,),
-        backgroundColor: Colors.orange,
+        backgroundColor: Colors.amberAccent,
       ),
       body: Column(
         children: [

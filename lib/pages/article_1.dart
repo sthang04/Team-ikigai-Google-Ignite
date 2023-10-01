@@ -60,7 +60,7 @@ class _HawkersPageState extends State<HawkersPage> {
                   children: <Widget>[
                     ListTile(
                       leading: Image.asset(
-                        'assets/lau_pa_sat.png', // Replace with the path to your image asset
+                        '../../assets/lau_pa_sat.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -122,7 +122,7 @@ class _HawkersPageState extends State<HawkersPage> {
                     ),
                      ListTile(
                       leading: Image.asset(
-                        'assets/maxwell.png', // Replace with the path to your image asset
+                        '../../assets/maxwell.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -186,7 +186,7 @@ class _HawkersPageState extends State<HawkersPage> {
                       // leading: Icon(Icons.album),
                       ListTile(
                       leading: Image.asset(
-                        'assets/old_airport_road.png', // Replace with the path to your image asset
+                        '../../assets/old_airport_road.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -247,7 +247,7 @@ class _HawkersPageState extends State<HawkersPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/adam_road.png', // Replace with the path to your image asset
+                        '../../assets/adam_road.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -308,7 +308,7 @@ class _HawkersPageState extends State<HawkersPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/amoy_street.png', // Replace with the path to your image asset
+                        '../../assets/amoy_street.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -369,7 +369,7 @@ class _HawkersPageState extends State<HawkersPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/chinatown_complex.png', // Replace with the path to your image asset
+                        '../../assets/chinatown_complex.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -430,7 +430,7 @@ class _HawkersPageState extends State<HawkersPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/tiong_bahru.png', // Replace with the path to your image asset
+                        '../../assets/tiong_bahru.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -491,7 +491,7 @@ class _HawkersPageState extends State<HawkersPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/tekka.png', // Replace with the path to your image asset
+                        '../../assets/tekka.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -552,7 +552,7 @@ class _HawkersPageState extends State<HawkersPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/newton.png', // Replace with the path to your image asset
+                        '../../assets/newton.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -614,7 +614,7 @@ class _HawkersPageState extends State<HawkersPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        'assets/ghim_moh.png', // Replace with the path to your image asset
+                        '../../assets/ghim_moh.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
