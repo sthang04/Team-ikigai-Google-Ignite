@@ -25,10 +25,10 @@ class _TopPageState extends State<TopPage>{
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home),label:'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.event),label:'Itinerary'),
-          BottomNavigationBarItem(icon: Icon(Icons.place),label:'Map'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite),label:'Favourites'),
+          BottomNavigationBarItem(icon: Icon(Icons.home, color: currentIndex == 0 ? Colors.green[900] : Colors.grey[700],),label:'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.event, color: currentIndex == 1 ? Colors.green[900] : Colors.grey[700],),label:'Itinerary'),
+          BottomNavigationBarItem(icon: Icon(Icons.place, color: currentIndex == 2 ? Colors.green[900] : Colors.grey[700],),label:'Map'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite, color: currentIndex == 3 ? Colors.green[900] : Colors.grey[700],),label:'Favourites'),
         ],
         currentIndex: currentIndex,
         onTap:(index){

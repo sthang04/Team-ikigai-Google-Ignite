@@ -1,18 +1,37 @@
+
+import 'package:belocal_app/main.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
 
-class ItineraryPage extends StatelessWidget{
-  const ItineraryPage({super.key});
+import 'package:belocal_app/pages/calendar/calendar_widget.dart';
 
+void main() {
+  initializeDateFormatting().then((_) => runApp(MyApp()));
+}
+
+class ItineraryPage extends StatefulWidget {
   @override
-  Widget build(BuildContext context){
+  _ItineraryPageState createState() => _ItineraryPageState();
+}
+
+class _ItineraryPageState extends State<ItineraryPage> {
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFA5D6A7),
-        centerTitle: true,
         title: Text('Make your itinerary'),
       ),
-      body: SingleChildScrollView(
-
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children:[
+            Container(
+              height:600,
+              child: CalendarWidget(),
+            ), 
+          ],
+       ),
       ),
     );
   }

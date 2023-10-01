@@ -92,7 +92,7 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 10),
             SizedBox(
-              height: 400,
+              height: 300,
               child: GridView.count(
                 crossAxisCount: 2,
                 childAspectRatio: 1.0, // Makes it square
