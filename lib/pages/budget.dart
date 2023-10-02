@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Budget Planner App',
-      theme: ThemeData(primarySwatch: Colors.green),
+      theme: ThemeData(primarySwatch: Colors.red),
       home: BudgetPlanner(),
     );
   }
@@ -25,7 +25,7 @@ class _BudgetPlannerState extends State<BudgetPlanner> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFA5D6A7),
+        backgroundColor: Colors.red,
         title: Text('Budget Planner'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -39,9 +39,11 @@ class _BudgetPlannerState extends State<BudgetPlanner> {
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Color(0xFFA5D6A7),
+        backgroundColor: Colors.red,
         showSelectedLabels: false,
         showUnselectedLabels: false,
+        unselectedItemColor: Colors.black,
+        selectedItemColor: Colors.white,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.event), label: 'Itinerary'),

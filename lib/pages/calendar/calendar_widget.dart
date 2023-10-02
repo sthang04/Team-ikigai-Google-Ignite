@@ -264,8 +264,8 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                     final event = value[index];
                     return Container(
                       margin: const EdgeInsets.symmetric(
-                        horizontal: 12.0,
-                        vertical: 4.0,
+                        horizontal: 30.0,
+                        vertical: 8.0,
                       ),
                       decoration: BoxDecoration(
                         border: Border.all(),
