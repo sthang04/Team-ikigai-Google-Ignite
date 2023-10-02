@@ -28,7 +28,7 @@ class _BudgetPlannerState extends State<BudgetPlanner> {
         backgroundColor: Colors.red,
         title: Text('Budget Planner'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icongit : Icon(Icons.arrow_back),
           onPressed: () {
             if (Navigator.canPop(context)) {
               Navigator.pop(context);
@@ -37,27 +37,7 @@ class _BudgetPlannerState extends State<BudgetPlanner> {
         ),
       ),
       body: pages[currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.red,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        unselectedItemColor: Colors.black,
-        selectedItemColor: Colors.white,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.event), label: 'Itinerary'),
-          BottomNavigationBarItem(icon: Icon(Icons.place), label: 'Map'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.favorite), label: 'Favourites'),
-        ],
-        currentIndex: currentIndex,
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
-      ),
+  
     );
   }
 

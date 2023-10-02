@@ -73,6 +73,9 @@ class MapPage extends StatelessWidget {
             // Call the function to open Google Maps
             _launchGoogleMaps();
           },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Colors.redAccent,
+          ),
           child: Text('Open Google Maps'),
         ),
       ),

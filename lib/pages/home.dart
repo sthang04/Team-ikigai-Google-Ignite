@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 IconButton(
-                  icon: Icon(Icons.extension),
+                  icon: Icon(Icons.wallet_sharp),
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -93,7 +93,7 @@ class HomePage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             Text(
-              'Popular',
+              'Popular Articles',
               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
             ),
             SizedBox(height: 10),

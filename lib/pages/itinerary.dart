@@ -27,7 +27,7 @@ class _ItineraryPageState extends State<ItineraryPage> {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Container(
-              height: 700,
+              height: 625,
               child: CalendarWidget(),
             ),
           ],
