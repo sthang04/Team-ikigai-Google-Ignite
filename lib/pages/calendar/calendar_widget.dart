@@ -26,6 +26,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
     equals: isSameDay,
     hashCode: getHashCode,
   );
+  //Dropdown Menu time selection
   static const List<String> timeList = <String>[
     '07:00 AM',
     '08:00 AM',
@@ -62,7 +63,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
     _eventController.dispose();
     super.dispose();
   }
-
+  //methods for displaying event scheduled for that day
   List<Event> _getEventsForDay(DateTime day) {
     return kEvents[day] ?? [];
   }
@@ -112,13 +113,13 @@ class _CalendarWidgetState extends State<CalendarWidget> {
       _selectedEvents.value = _getEventsForDay(end);
     }
   }
-
+  //to check if clear selection button applicable or not
   bool get canClearSelection =>
       _selectedDays.isNotEmpty || _rangeStart != null || _rangeEnd != null;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton( //For scheduling event on selected day
         onPressed: () {
           showDialog(
               context: context,
@@ -146,7 +147,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                           ),
                           onChanged: (String? value) {
                             setState(() {
-                              dropdownValue = value!;
+                              dropdownValue = value!; //update state to match selected value
                             });
                           },
                           items: timeList
@@ -166,10 +167,10 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                             dropdownValue = timeList.first;
                             Navigator.pop(context);
                             return;
-                          } else {
+                          } else { //Would store into a database (currently non-functional)
                             Navigator.pop(context);
                             dropdownValue = timeList.first;
-                            _eventController.clear();
+                            _eventController.clear(); 
                           }
                         },
                         child: Text("Submit"),
@@ -192,7 +193,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
           ValueListenableBuilder<DateTime>(
             valueListenable: _focusedDayNotifier,
             builder: (context, value, _) {
-              return _CalendarHeader(
+              return _CalendarHeader( 
                 focusedDay: value,
                 clearButtonVisible: canClearSelection,
                 onTodayButtonTap: () {
@@ -244,6 +245,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
             children: [
               Container(
                 padding: EdgeInsets.all(30),
+                // Display a message to let the user know what dates they've selected
                 child: Text(
                   _rangeStart != null && _rangeEnd != null
                       ? 'ଘ(੭*ˊᵕˋ)੭* ̀ˋ\nYour itinerary for the ${_rangeStart?.day}/${_rangeStart?.month} to the ${_rangeEnd?.day}/${_rangeEnd?.month}'
@@ -254,6 +256,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
               ),
             ],
           ),
+          //Displaying the events scheduled on selected days
           Expanded(
             child: ValueListenableBuilder<List<Event>>(
               valueListenable: _selectedEvents,
@@ -274,7 +277,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                       child: ListTile(
                         onTap: () => print('${event.title} - ${event.time}'),
                         title: Text('${event.title}'),
-                        subtitle: Text('${event.time}'), // Add this line
+                        subtitle: Text('${event.time}'),
                       ),
                     );
                   },

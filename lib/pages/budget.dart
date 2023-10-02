@@ -28,7 +28,7 @@ class _BudgetPlannerState extends State<BudgetPlanner> {
         backgroundColor: Colors.red,
         title: Text('Budget Planner'),
         leading: IconButton(
-          icongit : Icon(Icons.arrow_back),
+          icon : Icon(Icons.arrow_back),
           onPressed: () {
             if (Navigator.canPop(context)) {
               Navigator.pop(context);
