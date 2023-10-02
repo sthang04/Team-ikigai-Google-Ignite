@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'favourites.dart';
 import 'map.dart';
 
+
 void main() => runApp(const DrinksPage());
 
 class FoodItem {
@@ -209,17 +210,9 @@ class _DrinksPageState extends State<DrinksPage> {
                             // Handle map icon click here
                             Navigator.of(context).push(
                               MaterialPageRoute(
-                                builder: (context) => FavouritesPage(
-                                  favoritedItems: favoritedItems,
-                                  onDeleteItem: removeFromFavorites,
-                                ),
+                                builder: (context) => MapPage(),
                               ),
                             );
-                            addToFavorites(FoodItem(
-                              name: 'Bandung',
-                              address: 'Power Rojak Bandung, Singapore',
-                              rating: 4.5,
-                            ));
                           },
                         ),
                         const SizedBox(width: 8),
@@ -236,6 +229,11 @@ class _DrinksPageState extends State<DrinksPage> {
                                 ),
                               ),
                             );
+                            addToFavorites(FoodItem(
+                              name: 'Bandung',
+                              address: 'Power Rojak Bandung, Singapore',
+                              rating: 4.5,
+                            )); 
                           },
                         ),
                         const SizedBox(width: 8),
