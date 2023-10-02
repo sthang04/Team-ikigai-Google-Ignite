@@ -7,7 +7,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Budget Planner App',
-      theme: ThemeData(primarySwatch: Colors.red),
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+        primaryColor: Colors.redAccent,
+        colorScheme:
+            ThemeData().colorScheme.copyWith(secondary: Colors.orangeAccent),
+      ),
       home: BudgetPlanner(),
     );
   }
@@ -19,8 +24,6 @@ class BudgetPlanner extends StatefulWidget {
 }
 
 class _BudgetPlannerState extends State<BudgetPlanner> {
-  int currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,35 +39,9 @@ class _BudgetPlannerState extends State<BudgetPlanner> {
           },
         ),
       ),
-      body: pages[currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.red,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        unselectedItemColor: Colors.black,
-        selectedItemColor: Colors.white,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.event), label: 'Itinerary'),
-          BottomNavigationBarItem(icon: Icon(Icons.place), label: 'Map'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.favorite), label: 'Favourites'),
-        ],
-        currentIndex: currentIndex,
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
-      ),
+      body: BudgetPlannerPage(),
     );
   }
-
-  final pages = [
-    BudgetPlannerPage(),
-    // Add other pages like ItineraryPage(), MapPage(), FavouritesPage(),
-  ];
 }
 
 class BudgetPlannerPage extends StatefulWidget {
@@ -81,12 +58,22 @@ class _BudgetPlannerPageState extends State<BudgetPlannerPage> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(30.0),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center, // Center the content
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Weekly Food Expenses Plan",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+            Row(
+              children: [
+                Icon(Icons.food_bank_outlined),
+                SizedBox(width: 10),
+                Expanded(
+                  child: Text(
+                    "Weekly Food Expenses Plan",
+                    style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
             SizedBox(height: 30),
             TextField(
               keyboardType: TextInputType.number,
@@ -101,7 +88,16 @@ class _BudgetPlannerPageState extends State<BudgetPlannerPage> {
               ),
             ),
             SizedBox(height: 50),
-            Text("Eating Out: ${eatingOutPercentage}% of total budget"),
+            Row(
+              children: [
+                Icon(Icons.restaurant_menu),
+                SizedBox(width: 10),
+                Expanded(
+                  child: Text(
+                      "Eating Out: ${eatingOutPercentage}% of total budget"),
+                ),
+              ],
+            ),
             Slider(
               value: eatingOutPercentage,
               onChanged: (value) {
@@ -114,25 +110,29 @@ class _BudgetPlannerPageState extends State<BudgetPlannerPage> {
               max: 100,
               divisions: 10,
               label: "$eatingOutPercentage%",
+              activeColor: Colors.blue, // Set the active color to blue
             ),
             Text("Groceries: ${groceriesPercentage}% of total budget"),
-            Slider(
-              value: groceriesPercentage,
-              onChanged: (value) {
-                setState(() {
-                  groceriesPercentage = value;
-                  eatingOutPercentage = 100 - value;
-                });
-              },
-              min: 0,
-              max: 100,
-              divisions: 10,
-              label: "$groceriesPercentage%",
-            ),
             SizedBox(height: 30),
             ElevatedButton(
               onPressed: () {
-                if (weeklyBudget > 200) {
+                if (weeklyBudget == 0) {
+                  showDialog(
+                    context: context,
+                    builder: (context) => AlertDialog(
+                      title: Text("Input Missing"),
+                      content: Text("Please enter a value."),
+                      actions: <Widget>[
+                        TextButton(
+                          child: Text("Okay"),
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                        ),
+                      ],
+                    ),
+                  );
+                } else if (weeklyBudget > 200) {
                   showDialog(
                     context: context,
                     builder: (context) => AlertDialog(
@@ -149,20 +149,44 @@ class _BudgetPlannerPageState extends State<BudgetPlannerPage> {
                       ],
                     ),
                   );
+                } else {
+                  showDialog(
+                    context: context,
+                    builder: (context) => Dialog(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      elevation: 16,
+                      child: Container(
+                        height: 100,
+                        width: 150,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.check,
+                              size: 28,
+                              color: Colors.green,
+                            ),
+                            SizedBox(height: 10),
+                            Text("Saved!"),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
                 }
               },
               child: Text(
                 "Save Budget",
-                style: TextStyle(fontSize: 24), // Set the font size of the text
+                style: TextStyle(fontSize: 24),
               ),
               style: ElevatedButton.styleFrom(
-                primary: Colors.red,
+                backgroundColor: Colors.red,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15),
                 ),
-                padding: EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 12), // Increase the size of the button
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
               ),
             ),
             SizedBox(height: 50),
@@ -192,7 +216,13 @@ class _BudgetPlannerPageState extends State<BudgetPlannerPage> {
                         height: 50,
                         color: Colors.blue,
                         child: Center(
-                          child: Text("${eatingOutPercentage}% Eating Out"),
+                          child: Text(
+                            "${eatingOutPercentage}% Eating Out",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ),
                       flex: eatingOutPercentage.toInt(),
@@ -200,9 +230,15 @@ class _BudgetPlannerPageState extends State<BudgetPlannerPage> {
                     Expanded(
                       child: Container(
                         height: 50,
-                        color: Colors.red,
+                        color: Colors.orange,
                         child: Center(
-                          child: Text("${groceriesPercentage}% Groceries"),
+                          child: Text(
+                            "${groceriesPercentage}% Groceries",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
                         ),
                       ),
                       flex: groceriesPercentage.toInt(),
@@ -212,11 +248,18 @@ class _BudgetPlannerPageState extends State<BudgetPlannerPage> {
               ),
             ),
             SizedBox(height: 20),
-            Text("Daily Budget Tip:",
-                style: TextStyle(fontWeight: FontWeight.bold)),
-            SizedBox(height: 10),
             Text(
-                "Based on your budget, you can spend ${(weeklyBudget * (eatingOutPercentage / 100) / 7).toStringAsFixed(2)} on eating out daily."),
+              "Daily Budget Tip:",
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+            ),
+            SizedBox(height: 10),
+            Center(
+              child: Text(
+                "Based on your budget, you can spend ${(weeklyBudget * (eatingOutPercentage / 100) / 7).toStringAsFixed(2)} on eating out daily.",
+                style: TextStyle(fontSize: 24),
+                textAlign: TextAlign.center,
+              ),
+            ),
           ],
         ),
       ),
