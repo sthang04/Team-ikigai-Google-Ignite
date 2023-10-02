@@ -4,12 +4,14 @@ import 'article_1.dart';
 import 'article_2.dart';
 import 'article_3.dart';
 import 'article_4.dart';
+import 'budget.dart';
 
 final pagesRoutes = {
   'article_1': HawkersPage(),
   'article_2': DrinksPage(),
   'article_3': SnacksPage(),
   'article_4': FoodPage(),
+  'budget': BudgetPlanner(),
 };
 
 class HomePage extends StatelessWidget {
@@ -46,12 +48,16 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                Row(
-                  children: [
-                    IconButton(
-                        icon: Icon(Icons.notifications), onPressed: () {}),
-                    IconButton(icon: Icon(Icons.extension), onPressed: () {}),
-                  ],
+                IconButton(
+                  icon: Icon(Icons.extension),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              pagesRoutes['budget'] ?? DefaultPage()),
+                    );
+                  },
                 ),
               ],
             ),
@@ -91,8 +97,7 @@ class HomePage extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
             ),
             SizedBox(height: 10),
-            SizedBox(
-              height: 300,
+            Expanded(
               child: GridView.count(
                 crossAxisCount: 2,
                 childAspectRatio: 1.0, // Makes it square
