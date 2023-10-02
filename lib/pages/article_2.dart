@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'favourites.dart';
 import 'map.dart';
 
-
 void main() => runApp(const DrinksPage());
 
 class FoodItem {
@@ -42,7 +41,7 @@ class _DrinksPageState extends State<DrinksPage> {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              backgroundColor: Color(0xFFA5D6A7),
+              backgroundColor: Colors.red,
               title: Text(
                   'Shiok drinks'), // Replace with your desired app bar title
               leading: IconButton(
@@ -172,7 +171,7 @@ class _DrinksPageState extends State<DrinksPage> {
                               name: 'Teh Tarik',
                               address: 'Mr. Teh Tarik, Bedok, Singapore',
                               rating: 4.5,
-                            )); 
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),
@@ -233,7 +232,7 @@ class _DrinksPageState extends State<DrinksPage> {
                               name: 'Bandung',
                               address: 'Power Rojak Bandung, Singapore',
                               rating: 4.5,
-                            )); 
+                            ));
                           },
                         ),
                         const SizedBox(width: 8),

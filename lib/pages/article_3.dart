@@ -27,6 +27,7 @@ class _SnacksPageState extends State<SnacksPage> {
       favoritedItems.add(foodItem);
     });
   }
+
   void removeFromFavorites(int index) {
     setState(() {
       favoritedItems.removeAt(index);
@@ -40,7 +41,7 @@ class _SnacksPageState extends State<SnacksPage> {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              backgroundColor: Color(0xFFA5D6A7),
+              backgroundColor: Colors.red,
               title: Text(
                   'Old School Hunt'), // Replace with your desired app bar title
               leading: IconButton(
@@ -106,9 +107,10 @@ class _SnacksPageState extends State<SnacksPage> {
                                 ),
                               ),
                             );
-                             addToFavorites(FoodItem(
+                            addToFavorites(FoodItem(
                               name: 'King of Snacks',
-                              address: '1 Fusionopolis Way, #B2-04 Connexis, Singapore 138632',
+                              address:
+                                  '1 Fusionopolis Way, #B2-04 Connexis, Singapore 138632',
                               rating: 4.5,
                             ));
                           },
@@ -169,7 +171,8 @@ class _SnacksPageState extends State<SnacksPage> {
                             );
                             addToFavorites(FoodItem(
                               name: "Seah's Biscuit Shop",
-                              address: 'Block 716 Ang Mo Kio Ave 6, #01-4024, S560716',
+                              address:
+                                  'Block 716 Ang Mo Kio Ave 6, #01-4024, S560716',
                               rating: 4.5,
                             ));
                           },
@@ -231,7 +234,8 @@ class _SnacksPageState extends State<SnacksPage> {
                             );
                             addToFavorites(FoodItem(
                               name: 'CookiesTalk',
-                              address: 'Block 625 Ang Mo Kio Avenue 9, #01-116, Singapore 560625',
+                              address:
+                                  'Block 625 Ang Mo Kio Avenue 9, #01-116, Singapore 560625',
                               rating: 4.5,
                             ));
                           },
@@ -293,7 +297,8 @@ class _SnacksPageState extends State<SnacksPage> {
                             );
                             addToFavorites(FoodItem(
                               name: 'The Biscuit Shop',
-                              address: 'Tanjong Pagar Plz, #01-08/09 Block 6, Singapore 081006',
+                              address:
+                                  'Tanjong Pagar Plz, #01-08/09 Block 6, Singapore 081006',
                               rating: 4.5,
                             ));
                           },
@@ -355,7 +360,8 @@ class _SnacksPageState extends State<SnacksPage> {
                             );
                             addToFavorites(FoodItem(
                               name: 'Teck Leong Lee Kee',
-                              address: 'Blk 5029 Ang Mo Kio Industrial Park 2, #01-141, 569532',
+                              address:
+                                  'Blk 5029 Ang Mo Kio Industrial Park 2, #01-141, 569532',
                               rating: 4.5,
                             ));
                           },
@@ -478,7 +484,8 @@ class _SnacksPageState extends State<SnacksPage> {
                             );
                             addToFavorites(FoodItem(
                               name: 'Good Old Days',
-                              address: 'Block 103 Yishun Ring Road (Chong Pang), #01-95, Singapore 760103',
+                              address:
+                                  'Block 103 Yishun Ring Road (Chong Pang), #01-95, Singapore 760103',
                               rating: 4.5,
                             ));
                           },
@@ -540,7 +547,8 @@ class _SnacksPageState extends State<SnacksPage> {
                             );
                             addToFavorites(FoodItem(
                               name: 'The Biscuit Paradise',
-                              address: 'Kovan 209 Market and Food Centre, 209 Hougang St 21, Singapore 530209',
+                              address:
+                                  'Kovan 209 Market and Food Centre, 209 Hougang St 21, Singapore 530209',
                               rating: 4.5,
                             ));
                           },
@@ -663,7 +671,8 @@ class _SnacksPageState extends State<SnacksPage> {
                             );
                             addToFavorites(FoodItem(
                               name: 'SnackFirst',
-                              address: '18 Boon Lay Way #02-120, Tradehub 21 West Lobby Singapore 609966',
+                              address:
+                                  '18 Boon Lay Way #02-120, Tradehub 21 West Lobby Singapore 609966',
                               rating: 4.5,
                             ));
                           },

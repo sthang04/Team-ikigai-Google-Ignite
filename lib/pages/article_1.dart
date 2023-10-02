@@ -44,7 +44,7 @@ class _HawkersPageState extends State<HawkersPage> {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              backgroundColor: Color(0xFFA5D6A7),
+              backgroundColor: Colors.red,
               title: Text('Top 10 Hawkers'),
               leading: IconButton(
                 icon: Icon(Icons.arrow_back),
@@ -120,7 +120,7 @@ class _HawkersPageState extends State<HawkersPage> {
                         const SizedBox(width: 8),
                       ],
                     ),
-                     ListTile(
+                    ListTile(
                       leading: Image.asset(
                         '../../assets/maxwell.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
@@ -183,8 +183,8 @@ class _HawkersPageState extends State<HawkersPage> {
                         const SizedBox(width: 8),
                       ],
                     ),
-                      // leading: Icon(Icons.album),
-                      ListTile(
+                    // leading: Icon(Icons.album),
+                    ListTile(
                       leading: Image.asset(
                         '../../assets/old_airport_road.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed

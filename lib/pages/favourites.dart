@@ -44,11 +44,12 @@ class _FavouritesPageState extends State<FavouritesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFA5D6A7),
+        backgroundColor: Colors.red,
         title: Text('Favorites', style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       body: ListView.builder(
-        itemCount: widget.favoritedItems.length + 1, // +1 for the additional ListTile
+        itemCount:
+            widget.favoritedItems.length + 1, // +1 for the additional ListTile
         itemBuilder: (context, index) {
           if (index == 0) {
             // This is the additional ListTile you want to add with delete button and ratings
@@ -68,7 +69,8 @@ class _FavouritesPageState extends State<FavouritesPage> {
 
                       // // Use setState to trigger a rebuild of the widget
                       // setState(() {});
-                      if (index - 1 >= 0 && index - 1 < widget.favoritedItems.length) {
+                      if (index - 1 >= 0 &&
+                          index - 1 < widget.favoritedItems.length) {
                         // Call the onDeleteItem callback to delete the item
                         widget.onDeleteItem(0); // Adjust the index
 
@@ -80,10 +82,11 @@ class _FavouritesPageState extends State<FavouritesPage> {
                 ],
               ),
             );
-          } 
+          }
           if (index > 0) {
             // This is for the existing favorited items
-            final foodItem = widget.favoritedItems[index - 1]; // Adjust the index
+            final foodItem =
+                widget.favoritedItems[index - 1]; // Adjust the index
             return ListTile(
               title: Text(foodItem.name),
               subtitle: Text(foodItem.address),
@@ -95,7 +98,8 @@ class _FavouritesPageState extends State<FavouritesPage> {
                     icon: Icon(Icons.delete),
                     onPressed: () {
                       // Check if the index is within bounds before deleting
-                      if (index - 1 >= 0 && index - 1 < widget.favoritedItems.length) {
+                      if (index - 1 >= 0 &&
+                          index - 1 < widget.favoritedItems.length) {
                         // Call the onDeleteItem callback to delete the item
                         widget.onDeleteItem(index - 1); // Adjust the index
 
@@ -113,7 +117,3 @@ class _FavouritesPageState extends State<FavouritesPage> {
     );
   }
 }
-
-
-
-

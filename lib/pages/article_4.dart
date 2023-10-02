@@ -34,7 +34,6 @@ class _FoodPageState extends State<FoodPage> {
     });
   }
 
-
 // class FoodPage extends StatelessWidget {
 //   const FoodPage({super.key});
   @override
@@ -42,7 +41,7 @@ class _FoodPageState extends State<FoodPage> {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              backgroundColor: Color(0xFFA5D6A7),
+              backgroundColor: Colors.red,
               title: Text('Sedap!'), // Replace with your desired app bar title
               leading: IconButton(
                 icon: Icon(Icons.arrow_back),
@@ -687,5 +686,3 @@ class _FoodPageState extends State<FoodPage> {
             ))));
   }
 }
-
-

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 /* When you'll start changing states
 class MapPage extends StatefulWidget{
   const MapPage({super.key});
@@ -8,20 +7,18 @@ class MapPage extends StatefulWidget{
   State<MapPage> createState()=>_MapPageState();
 }
 */
-class MapPage extends StatelessWidget{
+class MapPage extends StatelessWidget {
   const MapPage({super.key});
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFA5D6A7),
+        backgroundColor: Colors.red,
         //centerTitle: false
-        title: Text('Map'),
+        title: Text('Map', style: TextStyle(fontWeight: FontWeight.bold)),
       ),
-      body: SingleChildScrollView(
-
-      ),
+      body: SingleChildScrollView(),
     );
   }
 }

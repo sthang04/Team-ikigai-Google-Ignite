@@ -1,4 +1,3 @@
-
 import 'package:belocal_app/main.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -19,19 +18,20 @@ class _ItineraryPageState extends State<ItineraryPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFA5D6A7),
-        title: Text('Make your itinerary', style: TextStyle(fontWeight: FontWeight.bold)),
+        backgroundColor: Colors.red,
+        title: Text('Make your itinerary',
+            style: TextStyle(fontWeight: FontWeight.bold)),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          children:[
+          children: [
             Container(
-              height:600,
+              height: 700,
               child: CalendarWidget(),
-            ), 
+            ),
           ],
-       ),
+        ),
       ),
     );
   }
