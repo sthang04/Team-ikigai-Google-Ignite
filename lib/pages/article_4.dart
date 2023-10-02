@@ -56,7 +56,7 @@ class _FoodPageState extends State<FoodPage> {
                   children: <Widget>[
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/chillicrab.png', // Replace with the path to your image asset
+                        'assets/chillicrab.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -119,7 +119,7 @@ class _FoodPageState extends State<FoodPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/chickenrice.png', // Replace with the path to your image asset
+                        'assets/chickenrice.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -182,7 +182,7 @@ class _FoodPageState extends State<FoodPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/charkwayteow.png', // Replace with the path to your image asset
+                        'assets/charkwayteow.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -245,7 +245,7 @@ class _FoodPageState extends State<FoodPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/nasilemak.png', // Replace with the path to your image asset
+                        'assets/nasilemak.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -308,7 +308,7 @@ class _FoodPageState extends State<FoodPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/kayatoast.png', // Replace with the path to your image asset
+                        'assets/kayatoast.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -370,7 +370,7 @@ class _FoodPageState extends State<FoodPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/satay.png', // Replace with the path to your image asset
+                        'assets/satay.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -433,7 +433,7 @@ class _FoodPageState extends State<FoodPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/bakkutteh.png', // Replace with the path to your image asset
+                        'assets/bakkutteh.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -495,7 +495,7 @@ class _FoodPageState extends State<FoodPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/sambalstingray.png', // Replace with the path to your image asset
+                        'assets/sambalstingray.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -558,7 +558,7 @@ class _FoodPageState extends State<FoodPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/laksa.png', // Replace with the path to your image asset
+                        'assets/laksa.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -621,7 +621,7 @@ class _FoodPageState extends State<FoodPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/bcm.png', // Replace with the path to your image asset
+                        'assets/bcm.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),

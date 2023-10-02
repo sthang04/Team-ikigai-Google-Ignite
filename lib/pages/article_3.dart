@@ -57,7 +57,7 @@ class _SnacksPageState extends State<SnacksPage> {
                   children: <Widget>[
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/kingofsnacks.png', // Replace with the path to your image asset
+                        'assets/kingofsnacks.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -120,7 +120,7 @@ class _SnacksPageState extends State<SnacksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/seah.png', // Replace with the path to your image asset
+                        'assets/seah.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -182,7 +182,7 @@ class _SnacksPageState extends State<SnacksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/cookiestalk.png', // Replace with the path to your image asset
+                        'assets/cookiestalk.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -245,7 +245,7 @@ class _SnacksPageState extends State<SnacksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/thebiscuitshop.png', // Replace with the path to your image asset
+                        'assets/thebiscuitshop.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -308,7 +308,7 @@ class _SnacksPageState extends State<SnacksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/teckleong.png', // Replace with the path to your image asset
+                        'assets/teckleong.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -371,7 +371,7 @@ class _SnacksPageState extends State<SnacksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/biscuitking.png', // Replace with the path to your image asset
+                        'assets/biscuitking.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -432,7 +432,7 @@ class _SnacksPageState extends State<SnacksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/goodolddays.png', // Replace with the path to your image asset
+                        'assets/goodolddays.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -495,7 +495,7 @@ class _SnacksPageState extends State<SnacksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/biscuitparadise.png', // Replace with the path to your image asset
+                        'assets/biscuitparadise.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -558,7 +558,7 @@ class _SnacksPageState extends State<SnacksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/nelly.png', // Replace with the path to your image asset
+                        'assets/nelly.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
@@ -619,7 +619,7 @@ class _SnacksPageState extends State<SnacksPage> {
                     ),
                     ListTile(
                       leading: Image.asset(
-                        '../../assets/snacksfirst.png', // Replace with the path to your image asset
+                        'assets/snacksfirst.png', // Replace with the path to your image asset
                         width: 100, // Adjust the width as needed
                         height: 100, // Adjust the height as needed
                       ),
