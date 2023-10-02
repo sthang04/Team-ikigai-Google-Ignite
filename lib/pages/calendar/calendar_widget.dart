@@ -25,6 +25,8 @@ class _CalendarWidgetState extends State<CalendarWidget> {
     equals: isSameDay,
     hashCode: getHashCode,
   );
+  static const List<String> timeList = <String>['07:00 AM', '08:00 AM','09:00 AM', '10:00 AM','11:00 AM', '12:00 PM','01:00 PM', '02:00 PM','03:00 PM','04:00 PM', '05:00 PM','06:00 PM','07:00 PM', '08:00 PM','09:00'];
+  String dropdownValue = timeList.first;
 
   late PageController _pageController;
   TextEditingController _eventController = TextEditingController();
@@ -40,6 +42,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
   void dispose() {
     _focusedDayNotifier.dispose();
     _selectedEvents.dispose();
+    _eventController.dispose();
     super.dispose();
   }
 
@@ -93,9 +96,9 @@ class _CalendarWidgetState extends State<CalendarWidget> {
     }
   }
 
+
   bool get canClearSelection =>
       _selectedDays.isNotEmpty || _rangeStart != null || _rangeEnd != null;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,25 +107,67 @@ class _CalendarWidgetState extends State<CalendarWidget> {
           showDialog(
             context: context,
             builder: (context){
-              return AlertDialog(
+              return StatefulBuilder(
+                builder: (BuildContext context, StateSetter setState) {
+                return AlertDialog(
                 scrollable: true,
-                title: Text ("Event Name"),
-                content: Padding(
-                  padding: EdgeInsets.all(8),
+                title: Text ("Add an Event:"),
+                content: Column(
+
+                  children:[Padding(
+                  padding: EdgeInsets.all(4),
                   child: TextField(
                     controller: _eventController,
+                    decoration:InputDecoration(labelText:'Enter Event Name'),
                   ),
+                ),
+                DropdownButton<String>(
+                  value:dropdownValue,
+                  icon: const Icon(Icons.arrow_downward),
+                  underline: Container(
+                    color:Colors.green,
                   ),
+                  onChanged: (String? value){
+                    setState((){
+                      dropdownValue=value!;
+                    });
+                  },
+                  items:timeList.map<DropdownMenuItem<String>>((String value){
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child:Text(value),
+                    );
+                  }).toList(),
+                  )
+                ],),
                   actions:[
-                    ElevatedButton(onPressed:(){},
+                    ElevatedButton(
+                      onPressed:(){
+                        if (_eventController.text.isEmpty){
+                          dropdownValue = timeList.first;
+                          Navigator.pop(context);
+                          return;
+                        }
+                        else{
+                          Navigator.pop(context);
+                          dropdownValue = timeList.first;
+                          _eventController.clear();
+                        }
+                      },
                       child: Text("Submit"),
-                    )
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                      ),
+                    ),
                   ],
                 );
+                }
+                );
+
             });
         },
         child: Icon(Icons.add,),
-        backgroundColor: Colors.amberAccent,
+        backgroundColor: Colors.red,
       ),
       body: Column(
         children: [
@@ -173,13 +218,17 @@ class _CalendarWidgetState extends State<CalendarWidget> {
             onRangeSelected: _onRangeSelected,
             onCalendarCreated: (controller) => _pageController = controller,
             onPageChanged: (focusedDay) => _focusedDayNotifier.value = focusedDay,
-            onFormatChanged: (format) {
-              if (_calendarFormat != format) {
-                setState(() => _calendarFormat = format);
-              }
-            },
           ),
           const SizedBox(height: 8.0),
+          Container(
+            padding: EdgeInsets.all(12),
+            child: Text(
+              _rangeStart != null && _rangeEnd != null
+                ? 'ଘ(੭*ˊᵕˋ)੭* ̀ˋYour itinerary for the ${_rangeStart?.day}/${_rangeStart?.month} to the ${_rangeEnd?.day}/${_rangeEnd?.month}'
+                : 'ଘ(੭*ˊᵕˋ)੭* ̀ˋHere is your itinerary. Select your dates to get started!',
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+            ),
+          ),
           Expanded(
             child: ValueListenableBuilder<List<Event>>(
               valueListenable: _selectedEvents,
@@ -187,6 +236,7 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                 return ListView.builder(
                   itemCount: value.length,
                   itemBuilder: (context, index) {
+                    final event = value[index];
                     return Container(
                       margin: const EdgeInsets.symmetric(
                         horizontal: 12.0,
@@ -197,12 +247,14 @@ class _CalendarWidgetState extends State<CalendarWidget> {
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       child: ListTile(
-                        onTap: () => print('${value[index]}'),
-                        title: Text('${value[index]}'),
+                        onTap: () => print('${event.title} - ${event.time}'),
+                        title: Text('${event.title}'),
+                        subtitle: Text('${event.time}'), // Add this line
                       ),
                     );
                   },
                 );
+
               },
             ),
           ),

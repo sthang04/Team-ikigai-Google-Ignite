@@ -78,7 +78,7 @@ class HomePage extends StatelessWidget {
                 },
                 child: Text('START YOUR ITINERARY'),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.amberAccent,
+                  primary: Colors.red,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),

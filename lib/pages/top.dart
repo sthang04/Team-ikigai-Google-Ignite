@@ -19,15 +19,15 @@ class _TopPageState extends State<TopPage>{
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Color(0xFFA5D6A7),
+        backgroundColor: Colors.grey,
         //comment out if you think styling looks better with icon name included underneath
         showSelectedLabels: false,
         showUnselectedLabels: false,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home, color: currentIndex == 0 ? Colors.green[900] : Colors.grey[700],),label:'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.event, color: currentIndex == 1 ? Colors.green[900] : Colors.grey[700],),label:'Itinerary'),
-          BottomNavigationBarItem(icon: Icon(Icons.place, color: currentIndex == 2 ? Colors.green[900] : Colors.grey[700],),label:'Map'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite, color: currentIndex == 3 ? Colors.green[900] : Colors.grey[700],),label:'Favourites'),
+          BottomNavigationBarItem(icon: Icon(Icons.home_outlined, color: currentIndex == 0 ? Colors.white : Colors.grey[900],),label:'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.event_outlined, color: currentIndex == 1 ? Colors.white : Colors.grey[900],),label:'Itinerary'),
+          BottomNavigationBarItem(icon: Icon(Icons.place_outlined, color: currentIndex == 2 ? Colors.white : Colors.grey[900],),label:'Map'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite_outlined, color: currentIndex == 3 ? Colors.white : Colors.grey[900],),label:'Favourites'),
         ],
         currentIndex: currentIndex,
         onTap:(index){
